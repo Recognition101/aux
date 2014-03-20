@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>aux folder</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="/static/style.css" rel="stylesheet" type="text/css"
+        media="all">
+    <link href="/static/notify.css" rel="stylesheet" type="text/css"
+          media="all">
+    <link href="/static/directory.css" rel="stylesheet" type="text/css"
+          media="all">
+</head>
+
+<body>
+    {{#title}}{{> titlebar}}{{/title}}
+    <div class="hpanels-desktop full-height">
+        <div class="sidebar">
+            {{#if hasDirs}}
+            <ul class="dirs">
+                {{#files}}
+                    {{#if isDir}}
+                        <li>{{> file}}</li>
+                    {{/if}}
+                {{/files}}
+            </ul>
+            {{/if}}
+        </div>
+        <div class="mainbar full-height box-full">
+            <ul class="files">
+                <li class="upload">
+                    {{#if uploadError}}
+                        <div class="error">{{uploadError}}</div>
+                    {{/if}}
+                    <form action="." method="POST"
+                          enctype="multipart/form-data">
+                        <input type="file" class="notify" name="newFile">
+                        <div class="notify {{#privUp}}privUp{{/privUp}}">
+                            <input type="password" placeholder="password"
+                                   name="passUp">
+                            <input type="submit" value="upload">
+                        </div>
+                    </form>
+                </li>
+                {{#files}}
+                    {{#unless isDir}}
+                        <li>{{> file}}</li>
+                    {{/unless}}
+                {{/files}}
+            </ul>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="/static/lib.js"></script>
+    <script type="text/javascript" src="/static/handlebars.runtime.js">
+    <script type="text/javascript">
+        (function() {
+                var temps = Handlebars.templates = Handlebars.templates || {};
+            {{#templates}}
+                temps['{{{name}}}'] = Handlebars.template({{{template}}});
+            {{/templates}}
+        })();
+    </script>
+</body>
+</html>
+

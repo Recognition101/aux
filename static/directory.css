@@ -1,0 +1,194 @@
+/** MAIN **/
+body {background-color: #EFEFF3;}
+body,
+input[type="submit"],
+input[type="password"],
+input[type="file"] {
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light",
+                 "Helvetica Neue", Helvetica, Arial, "Lucida Grande",
+                 sans-serif; 
+    font-weight: 300;
+    font-size: 18px;
+}
+h2 {
+    font-weight: normal;
+}
+
+/** TITLE BAR **/
+.titlebar {
+    position: absolute;
+    left: 0; right: 0; top: 0;
+    border-bottom: 1px solid #A7A7AA;
+    height: 40px;
+    z-index: 10;
+
+    background: rgba(255,255,255,0.95);
+    overflow: hidden;
+}
+.titlebar .back {
+    display: block;
+    position: absolute;
+    top: 0; left: 0;
+    height: 100%;
+    padding: 10px 20px;
+}
+.titlebar h2 {
+    margin: 0;
+    padding: 4px 0 0 10px;
+    text-align: center;
+}
+
+.sidebar, .mainbar {
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
+}
+@media only screen and (max-width: 640px) {
+    .sidebar, .mainbar {
+        overflow-y: visible;
+    }
+}
+.dirs, .files {
+    margin: 0;
+    padding: 80px 0 0 0;
+    list-style: none;
+}
+
+/** SIDEBAR (DIRECTORIES) **/
+.dirs li {
+    display: block;
+    position: relative;
+    padding-top: 1px;
+    background-color: white;
+}
+.dirs li:before {
+    content: "";
+    position: absolute; top: 0; right: 0;
+    width: 80%;
+    height: 1px;
+    border-top: 1px solid #CDCDD0;
+}
+.dirs li:first-child:before {
+    display:none;
+}
+.dirs li:first-child {
+    padding-top: 0;
+    border-top: 1px solid #CDCDD0;
+}
+.dirs li:last-child {
+    border-bottom: 1px solid #CDCDD0;
+}
+.dirs li a {
+    display: block;
+    padding: 10px 5px 10px 35px;
+    background-color: white;
+    transition: background 0.2s ease-in-out, color 0.2s ease-in-out;
+}
+.dirs li a:hover {
+    background-color: #319CDF;
+    color: #FFFFFF;
+}
+.sidebar {
+    border-right: 1px solid #747474;
+    width: 275px;
+}
+@media only screen and (max-width: 640px) {
+    .sidebar {
+        border: none;
+        width: 100%;
+    }
+    .dirs li a:hover {
+        background-color: white;
+        color: #319CDF;
+    }
+}
+
+/** MAINBAR (FILES) **/
+.files {
+    padding: 60px 20px;
+    text-align: center;
+}
+.files > li,
+.upload {
+    display: inline-block;
+    position: relative;
+    margin: 10px;
+    border: 1px solid #CDCDD0;
+    width: 160px;
+    height: 250px;
+
+    text-align: center;
+    overflow: hidden;
+    border-radius: 10px;
+    background-color: white;
+}
+li.upload {
+    width: 350px;
+}
+.upload .notify {
+    margin: 60px 20px;
+    width: 312px;
+}
+.upload .notify.privUp {
+    border: 0 transparent none;
+}
+.upload .notify.privUp input[type=password] {
+    display: none;
+}
+.upload input[type=file].notify {
+    margin-bottom: 0;
+}
+.files > li a {
+    display: block;
+    min-height: 100%;
+
+    background-repeat: no-repeat;
+    background-size: 150px auto;
+    background-position: center 80%;
+}
+.files > li .title {
+    display: block;
+    padding: 6px 4px 4px 4px;
+
+    overflow: hidden;
+    background-color: rgba(255,255,255,0.8);
+}
+@media only screen and (max-width: 640px) {
+    .titlebar {
+        position: static;
+    }
+    .dirs {
+        padding: 10px 0 0 0;
+    }
+    .files {
+        padding: 10px 10px;
+    }
+    .files > li {
+        margin: 2px;
+        width: 140px;
+        height: 215px;
+    }
+    .files > li.upload {
+        width: 292px;
+        height: 140px;
+    }
+    .files > li.upload .error {
+        margin-top: 5px;
+    }
+    .files > li.upload input[type=password] {
+        width: 135px;
+    }
+    .files > li.upload input[type=file] {
+        margin: 20px 0 0 0;
+        width: 290px;
+        border: 0 transparent none;
+    }
+    .files > li.upload .notify {
+        width: 292px;
+        margin: 20px 0;
+        border-radius: 0;
+        border-width: 1px 0;
+    }
+    .files > li a {
+        background-size: auto 172px;
+    }
+}

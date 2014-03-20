@@ -1,0 +1,7 @@
+<a class="goto-{{#if isDir}}dir{{else}}file{{/if}}"
+    href="/{{fn}}{{#isDir}}/{{/isDir}}"
+    {{#if thumb}}
+        style="background-image:url('{{thumb}}')"
+    {{/if}}>
+    <span class="title">{{fnB}}</span>
+</a>
