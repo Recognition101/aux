@@ -36,4 +36,4 @@ Note that this will only work if you have added the correct "name" to the certif
 
 ## Screenshots
 
-![desktop](/screenshots/desktop.png "Desktop") ![mobile](/screenshots/mobile.png "Mobile")
+![desktop](/screenshots/desktop.png "Desktop") ![mobile](/screenshots/mobile.png "Mobile" =361x)
