@@ -1,0 +1,37 @@
+{
+    "name": "aux",
+    "description": "A server that allows (password-locked) uploads/downloads.",
+    "version": "0.1.0",
+    "homepage": "https://github.com/recognition101/aux",
+    "keywords": [
+        "aux",
+        "simple server",
+        "file upload",
+        "file download",
+        "password"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/recognition101/aux"
+    },
+    "author": {
+        "name": "Recognition101",
+        "email": "darklightmw@gmail.com"
+    },
+    "main": "aux.js",
+    "engines": {
+        "node": ">= 0.10.x"
+    },
+    "dependencies": {
+        "express": "3.4.x",
+        "express3-handlebars": "0.x",
+        "commander": "2.0.x",
+        "musicmetadata": "0.2.x",
+        "bluebird": "1.0.x",
+        "connect-stream": "1.0.x",
+        "fs-extra": "0.8.x"
+    },
+    "scripts": {
+        "start": "node aux.js"
+    }
+}

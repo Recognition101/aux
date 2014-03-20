@@ -1,0 +1,33 @@
+.notify {
+    margin: 0;
+    border: 1px solid #C7C7CA;
+    padding: 0;
+    width: 300px;
+
+    border-radius: 10px;
+}
+
+.notify input {
+    display: inline-block;
+    background: transparent;
+}
+
+.notify input[type=password] {
+    margin-left: 10px;
+    width: 176px;
+    border-style: none;
+}
+
+.error {
+    display: inline-block;
+    margin-top: 20px;
+    border: 1px solid #C7284D;
+    padding: 2px 30px;
+
+    color: #C7284D;
+    border-radius: 7px;
+}
+
+@media only screen and (max-width: 640px) {
+    .notify input[type=password] {width: 155px;}
+}

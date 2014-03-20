@@ -1,0 +1,116 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+body,
+input[type="submit"],
+input[type="password"],
+input[type="file"] {
+   font-family: "HelveticaNeue-Light", "Helvetica Neue Light",
+                "Helvetica Neue", Helvetica, Arial, "Lucida Grande",
+                sans-serif; 
+   font-weight: 300;
+   font-size: 18px;
+}
+a {
+    color: #319CDF;
+    text-decoration: none;
+}
+
+input[type=file]::-webkit-file-upload-button,
+input[type=submit] {
+    -webkit-appearance:none;
+    font-size: 18px;
+    font-weight: 300;
+    border: 1px solid #319CDF;
+    padding: 2px 30px;
+
+    border-radius: 7px;
+    color: #319CDF;
+    cursor: pointer;
+    background-color: white;
+}
+input[type=file]::-webkit-file-upload-button {
+    margin: 2px;
+}
+
+/** OOCSS **/
+html, body, .fullheight {
+    height: 100%;
+}
+.vpanels,
+.vpanels-desktop {
+    display: -webkit-box;
+    display:    -moz-box;
+    display:         box;
+    -webkit-box-orient: vertical;
+       -moz-box-orient: vertical;
+        -ms-box-orient: vertical;
+            box-orient: vertical;
+}
+.hpanels,
+.hpanels-desktop {
+    display: -webkit-box;
+    display:    -moz-box;
+    display:         box;
+    -webkit-box-orient: horizontal;
+       -moz-box-orient: horizontal;
+        -ms-box-orient: horizontal;
+            box-orient: horizontal;
+}
+.box-full {
+    -webkit-box-flex:  1;
+       -moz-box-flex:  1;
+        -ms-box-flex:  1;
+            box-flex:  1;
+}
+.full-width  {width: 100%;}
+.full-height {height: 100%;}
+.center-text {text-align: center;}
+
+.show-mobile {
+    display: none;
+}
+
+@media only screen and (max-width: 640px) {
+    .vpanels-desktop,
+    .hpanels-desktop {
+        display: block;
+    }
+    .hide-mobile {
+        display: none;
+    }
+    .show-mobile {
+        display: auto;
+    }
+}
+
+.goto-dir:before,
+.icon-directory:before {
+    content: "";
+    position: absolute; left: 8px; top: 12px;
+    width: 20px; height: 20px;
+    pointer-events: none;
+    background-image: url(/static/dir.svg);
+    background-size: 20px 20px;
+}
+*:hover > .goto-dir:before,
+*:hover > .icon-directory:before {
+    background-image: url(/static/dir-sel.svg);
+}
+@media only screen and (max-width: 640px) {
+    *:hover > .goto-dir:before,
+    *:hover > .icon-directory:before {
+        background-image: url(/static/dir.svg);
+    }
+}
+
+.back:before {
+    content: "";
+    position: absolute; left: 4px; top: 11px;
+    width: 13px; height: 21px;
+    pointer-events: none;
+    background-image: url(/static/back.svg);
+    background-size: 13px 21px;
+    background-repeat: no-repeat;
+}
