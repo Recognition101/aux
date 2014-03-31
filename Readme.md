@@ -29,6 +29,10 @@ echo '{ "upPass": "YOUR-UPLOAD-PASSWORD", "dnPass": "YOUR-DOWNLOAD-PASSWORD", "s
 node main.js -p [YOUR-PORT]
 ```
 
+Once installed, you can place files in the "files" directory and they will be served (password protected). Also note that any files you place in the files/public directory will be accessible even without a password. To upload, you'll need to use the upload password (even to upload to the public directory).
+
+If either the upload or download passwords are set to nothing (""), then the user will not be prompted for a password and will automatically be able to always upload or download files.  
+
 ## Trust the Keys
 Make sure that once you have generated the "cert.pem" certificate file, you double click it in OSX or open it in iOS in order to add it to the list of trusted certificates. This will make the scary warning in browsers go away.
 
